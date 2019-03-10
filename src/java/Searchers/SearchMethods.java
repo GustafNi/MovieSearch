@@ -16,11 +16,11 @@ import model.Search;
 
 
 public class SearchMethods {
-private String word;
-    public static Movie getSingleMovie(String word) {
-       
-        try {
+private static String word;
+private String listOfMovies;
 
+    public static Movie getSingleMovie(String word) {
+        try {
             URL url = new URL("http://www.omdbapi.com/?t==" + word + "&apikey=d8bd6f43");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -35,38 +35,23 @@ private String word;
                     (conn.getInputStream())));
 
             String output = br.readLine();
-            
             System.out.println(output);
-//            System.out.println("Output from Server .... \n");
-//            if (output!= null) {
-//                System.out.println(output);
-//            }
+
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             Movie movie = gson.fromJson(output, Movie.class);
-//            System.out.println(movie.getTitle());
             List<Movie> exList  = Arrays.asList(movie);
-
-//            for (Movie mov : exList) {
-//                System.out.println(mov.getTitle());
-//
-//            }
            
             conn.disconnect();
             return movie;
         } catch (MalformedURLException e) {
-
             e.printStackTrace();
-
         } catch (IOException e) {
-
             e.printStackTrace();
-
         }
         return null;
     } 
     public static void getListOfMovies(String word) {
         try {
-
             URL url = new URL("http://www.omdbapi.com/?s==" + word + "&apikey=d8bd6f43");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -81,44 +66,34 @@ private String word;
                     (conn.getInputStream())));
 
             String output = br.readLine();
-            
             System.out.println(output);
-//            int index = output.lastIndexOf("]");
-//            String newOutput = output.substring(0, index + 1);
-//            newOutput = newOutput.concat("}");
-//
-//            System.out.println("Output from Server .... \n");
-//            
-//            if (output!= null) {
-//                System.out.println(output);
-//            }
-           
             
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             Movie movies = gson.fromJson(output, Movie.class);
-//            List<Movie> exList  = Arrays.asList(movies);
             List<Search> result = movies.getSearch();
             if(result.isEmpty()) {
                 System.out.println("Empty");
             }
             for (Search mov : result) {
                 System.out.println(mov.getTitle() + ", imdbID: " + mov.getImdbID());
-
             }
-           
             conn.disconnect();
 
         } catch (MalformedURLException e) {
-
             e.printStackTrace();
-
         } catch (IOException e) {
-
             e.printStackTrace();
-
         }
     }
 
+    public String getListOfMovies() {
+        return listOfMovies;
+    }
+
+    public void setListOfMovies(String listOfMovies) {
+        this.listOfMovies = listOfMovies;
+    }
+    
     public String getWord() {
         return word;
     }
@@ -126,5 +101,4 @@ private String word;
     public void setWord(String word) {
         this.word = word;
     }
-    
 }

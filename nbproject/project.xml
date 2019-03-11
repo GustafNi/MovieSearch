@@ -3,6 +3,10 @@
     <type>org.netbeans.modules.web.project</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/web-project/3">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8df7f76afeaefa9c25386223c6ce463119cf5c98
             <name>MovieConsumer</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
             <web-module-libraries>
@@ -25,6 +29,25 @@
             </source-roots>
             <test-roots>
                 <root id="test.src.dir" name="Test Packages"/>
+<<<<<<< HEAD
+=======
+=======
+            <name>SlutProjekt</name>
+            <minimum-ant-version>1.6.5</minimum-ant-version>
+            <web-module-libraries>
+                <library dirs="200">
+                    <file>${file.reference.gson-2.6.2.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+            </web-module-libraries>
+            <web-module-additional-libraries/>
+            <source-roots>
+                <root id="src.dir"/>
+            </source-roots>
+            <test-roots>
+                <root id="test.src.dir"/>
+>>>>>>> 35cf1be4cc55c3f46022402aa2b25a1c959cb68e
+>>>>>>> 8df7f76afeaefa9c25386223c6ce463119cf5c98
             </test-roots>
         </data>
     </configuration>

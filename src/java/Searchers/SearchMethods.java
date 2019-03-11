@@ -11,6 +11,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8df7f76afeaefa9c25386223c6ce463119cf5c98
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import model.Movie;
@@ -25,6 +29,18 @@ public class SearchMethods {
    }
 
     public Movie getSingleMovie(String word) {
+<<<<<<< HEAD
+=======
+=======
+import model.Movie;
+import model.Search;
+
+
+public class SearchMethods {
+private String word;
+    public static Movie getSingleMovie(String word) {
+>>>>>>> 35cf1be4cc55c3f46022402aa2b25a1c959cb68e
+>>>>>>> 8df7f76afeaefa9c25386223c6ce463119cf5c98
        
         try {
 
@@ -71,7 +87,15 @@ public class SearchMethods {
         }
         return null;
     } 
+<<<<<<< HEAD
     public void getListOfMovies(String word) {
+=======
+<<<<<<< HEAD
+    public void getListOfMovies(String word) {
+=======
+    public static void getListOfMovies(String word) {
+>>>>>>> 35cf1be4cc55c3f46022402aa2b25a1c959cb68e
+>>>>>>> 8df7f76afeaefa9c25386223c6ce463119cf5c98
         try {
 
             URL url = new URL("http://www.omdbapi.com/?s==" + word + "&apikey=d8bd6f43");
@@ -126,6 +150,10 @@ public class SearchMethods {
         }
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 8df7f76afeaefa9c25386223c6ce463119cf5c98
      public void getNextPage(String word, int step) {
          
         try {
@@ -182,4 +210,17 @@ public class SearchMethods {
 
         }
     }
+<<<<<<< HEAD
+=======
+=======
+    public String getWord() {
+        return word;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+    
+>>>>>>> 35cf1be4cc55c3f46022402aa2b25a1c959cb68e
+>>>>>>> 8df7f76afeaefa9c25386223c6ce463119cf5c98
 }

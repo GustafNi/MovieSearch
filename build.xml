@@ -7,8 +7,13 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
+<<<<<<< HEAD
 <project name="MovieConsumer" default="default" basedir=".">
     <description>Builds, tests, and runs the project MovieConsumer.</description>
+=======
+<project name="SlutProjekt" default="default" basedir=".">
+    <description>Builds, tests, and runs the project SlutProjekt.</description>
+>>>>>>> 35cf1be4cc55c3f46022402aa2b25a1c959cb68e
     <import file="nbproject/build-impl.xml"/>
     <!--
 

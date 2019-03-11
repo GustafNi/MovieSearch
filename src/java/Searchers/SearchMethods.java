@@ -11,6 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
+<<<<<<< HEAD
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import model.Movie;
@@ -25,6 +26,15 @@ public class SearchMethods {
    }
 
     public Movie getSingleMovie(String word) {
+=======
+import model.Movie;
+import model.Search;
+
+
+public class SearchMethods {
+private String word;
+    public static Movie getSingleMovie(String word) {
+>>>>>>> 35cf1be4cc55c3f46022402aa2b25a1c959cb68e
        
         try {
 
@@ -71,7 +81,11 @@ public class SearchMethods {
         }
         return null;
     } 
+<<<<<<< HEAD
     public void getListOfMovies(String word) {
+=======
+    public static void getListOfMovies(String word) {
+>>>>>>> 35cf1be4cc55c3f46022402aa2b25a1c959cb68e
         try {
 
             URL url = new URL("http://www.omdbapi.com/?s==" + word + "&apikey=d8bd6f43");
@@ -126,6 +140,7 @@ public class SearchMethods {
         }
     }
 
+<<<<<<< HEAD
      public void getNextPage(String word, int step) {
          
         try {
@@ -182,4 +197,14 @@ public class SearchMethods {
 
         }
     }
+=======
+    public String getWord() {
+        return word;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+    
+>>>>>>> 35cf1be4cc55c3f46022402aa2b25a1c959cb68e
 }
